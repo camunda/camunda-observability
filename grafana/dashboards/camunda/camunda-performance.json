@@ -36,7 +36,7 @@
       {
         "kind": "AnnotationQuery",
         "spec": {
-          "enable": true,
+          "enable": false,
           "hide": false,
           "iconColor": "red",
           "legacyOptions": {
@@ -63,7 +63,7 @@
       {
         "kind": "AnnotationQuery",
         "spec": {
-          "enable": true,
+          "enable": false,
           "hide": false,
           "iconColor": "orange",
           "legacyOptions": {
@@ -8208,7 +8208,7 @@
           {
             "kind": "RowsLayoutRow",
             "spec": {
-              "collapse": false,
+              "collapse": true,
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
@@ -8813,7 +8813,7 @@
         "1d"
       ],
       "fiscalYearStartMonth": 0,
-      "from": "now-12h",
+      "from": "now-24h",
       "hideTimepicker": false,
       "timezone": "browser",
       "to": "now"
@@ -8844,10 +8844,10 @@
         "kind": "QueryVariable",
         "spec": {
           "allValue": ".*",
-          "allowCustomValue": true,
+          "allowCustomValue": false,
           "current": {
-            "text": "c8-ck-base-8736-endurance",
-            "value": "c8-ck-base-8736-endurance"
+            "text": "All",
+            "value": "$__all"
           },
           "definition": "label_values(atomix_role,namespace)",
           "hide": "dontHide",
