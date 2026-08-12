@@ -5405,7 +5405,7 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "max by (pod, container, service) (rate(container_cpu_usage_seconds_total{container!~\"\", namespace=~\"$namespace\", pod!~\"(elastic.*|camunda.*)\"}[$__rate_interval]))",
+                        "expr": "max by (pod, container, service) (rate(container_cpu_usage_seconds_total{container!~\"\", namespace=~\"$namespace\", pod!~\"(elastic.*|camunda.*|zeebe.*)\"}[$__rate_interval]))",
                         "interval": "",
                         "legendFormat": "{{pod}}",
                         "range": true
