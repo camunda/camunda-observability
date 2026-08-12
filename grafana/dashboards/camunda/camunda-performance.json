@@ -63,7 +63,7 @@
       {
         "kind": "AnnotationQuery",
         "spec": {
-          "enable": false,
+          "enable": true,
           "hide": false,
           "iconColor": "orange",
           "legacyOptions": {
@@ -2075,7 +2075,7 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "sum by (pod, container, service) (rate(container_cpu_usage_seconds_total{container!~\"\", namespace=~\"$namespace\", pod=~\"camunda.*\"}[$__rate_interval]))",
+                        "expr": "sum by (pod, container, service) (rate(container_cpu_usage_seconds_total{container!~\"\", namespace=~\"$namespace\", pod=~\"zeebe.*|camunda.*\"}[$__rate_interval]))",
                         "interval": "",
                         "legendFormat": "{{pod}}",
                         "range": true
@@ -4617,32 +4617,6 @@
                       {
                         "id": "custom.fillOpacity",
                         "value": 0
-                      }
-                    ]
-                  },
-                  {
-                    "__systemRef": "hideSeriesFrom",
-                    "matcher": {
-                      "id": "byNames",
-                      "options": {
-                        "mode": "exclude",
-                        "names": [
-                          "camunda-2",
-                          "camunda-1",
-                          "camunda-0"
-                        ],
-                        "prefix": "All except:",
-                        "readOnly": true
-                      }
-                    },
-                    "properties": [
-                      {
-                        "id": "custom.hideFrom",
-                        "value": {
-                          "legend": false,
-                          "tooltip": true,
-                          "viz": true
-                        }
                       }
                     ]
                   }
@@ -7921,7 +7895,7 @@
           {
             "kind": "RowsLayoutRow",
             "spec": {
-              "collapse": false,
+              "collapse": true,
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
@@ -8839,10 +8813,10 @@
         "1d"
       ],
       "fiscalYearStartMonth": 0,
-      "from": "2026-08-11T19:30:00.000Z",
+      "from": "now-12h",
       "hideTimepicker": false,
       "timezone": "browser",
-      "to": "2026-08-11T22:30:37.000Z"
+      "to": "now"
     },
     "title": "Camunda Performance",
     "variables": [
@@ -8872,8 +8846,8 @@
           "allValue": ".*",
           "allowCustomValue": true,
           "current": {
-            "text": "c8-ck-lower-disk-size-stress",
-            "value": "c8-ck-lower-disk-size-stress"
+            "text": "c8-ck-base-8736-endurance",
+            "value": "c8-ck-base-8736-endurance"
           },
           "definition": "label_values(atomix_role,namespace)",
           "hide": "dontHide",
