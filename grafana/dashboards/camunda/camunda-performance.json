@@ -408,7 +408,7 @@
                       "spec": {
                         "editorMode": "code",
                         "exemplar": false,
-                        "expr": "(sum(elasticsearch_indices_store_size_bytes_primary{namespace=~\"$namespace\", index=~\"zeebe.*\"}) * 2)\n/ \n(\n    sum (increase(zeebe_element_instance_events_total{namespace=~\"$namespace\",partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"PROCESS\"}[$__range]))\n-\n    sum(increase(zeebe_element_instance_events_total{namespace=~\"$namespace\", partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"CALL_ACTIVITY\"}[$__range]))\n\n)",
+                        "expr": "(sum(elasticsearch_indices_store_size_bytes_primary{namespace=~\"$namespace\", index=~\"zeebe.*\"}) * 2)\n/ \n(\n    sum (increase(zeebe_element_instance_events_total{namespace=~\"$namespace\",partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"PROCESS\"}[$__range]))\n-\n    (sum(increase(zeebe_element_instance_events_total{namespace=~\"$namespace\", partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"CALL_ACTIVITY\"}[$__range])) or vector(0))\n\n)",
                         "instant": true,
                         "legendFormat": "__auto",
                         "range": false
@@ -7342,7 +7342,7 @@
                       "spec": {
                         "editorMode": "code",
                         "exemplar": false,
-                        "expr": "sum(kubelet_volume_stats_used_bytes{namespace=~\"$namespace\", persistentvolumeclaim=~\"elastic.*\"})\n/ \n(\n    sum (increase(zeebe_element_instance_events_total{namespace=~\"$namespace\",partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"PROCESS\"}[$__range]))\n-\n    sum(increase(zeebe_element_instance_events_total{namespace=~\"$namespace\", partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"CALL_ACTIVITY\"}[$__range]))\n\n)",
+                        "expr": "sum(kubelet_volume_stats_used_bytes{namespace=~\"$namespace\", persistentvolumeclaim=~\"elastic.*\"})\n/ \n(\n    sum (increase(zeebe_element_instance_events_total{namespace=~\"$namespace\",partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"PROCESS\"}[$__range]))\n-\n    (sum(increase(zeebe_element_instance_events_total{namespace=~\"$namespace\", partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"CALL_ACTIVITY\"}[$__range])) or vector(0))\n\n)",
                         "instant": true,
                         "legendFormat": "__auto",
                         "range": false
@@ -7508,7 +7508,7 @@
                       "spec": {
                         "editorMode": "code",
                         "exemplar": false,
-                        "expr": "(sum(elasticsearch_indices_store_size_bytes_primary{namespace=~\"$namespace\", index=~\"operate.*\"}) * 2)\n/ \n(\n    sum (increase(zeebe_element_instance_events_total{namespace=~\"$namespace\",partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"PROCESS\"}[$__range]))\n-\n    sum(increase(zeebe_element_instance_events_total{namespace=~\"$namespace\", partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"CALL_ACTIVITY\"}[$__range]))\n\n)",
+                        "expr": "(sum(elasticsearch_indices_store_size_bytes_primary{namespace=~\"$namespace\", index=~\"operate.*\"}) * 2)\n/ \n(\n    sum (increase(zeebe_element_instance_events_total{namespace=~\"$namespace\",partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"PROCESS\"}[$__range]))\n-\n    (sum(increase(zeebe_element_instance_events_total{namespace=~\"$namespace\", partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"CALL_ACTIVITY\"}[$__range])) or vector(0))\n\n)",
                         "instant": true,
                         "legendFormat": "__auto",
                         "range": false
@@ -7592,7 +7592,7 @@
                       "spec": {
                         "editorMode": "code",
                         "exemplar": false,
-                        "expr": "(sum(elasticsearch_indices_store_size_bytes_primary{namespace=~\"$namespace\", index=~\"tasklist.*\"}) * 2)\n/ \n(\n    sum (increase(zeebe_element_instance_events_total{namespace=~\"$namespace\",partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"PROCESS\"}[$__range]))\n-\n    sum(increase(zeebe_element_instance_events_total{namespace=~\"$namespace\", partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"CALL_ACTIVITY\"}[$__range]))\n\n)",
+                        "expr": "(sum(elasticsearch_indices_store_size_bytes_primary{namespace=~\"$namespace\", index=~\"tasklist.*\"}) * 2)\n/ \n(\n    sum (increase(zeebe_element_instance_events_total{namespace=~\"$namespace\",partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"PROCESS\"}[$__range]))\n-\n    (sum(increase(zeebe_element_instance_events_total{namespace=~\"$namespace\", partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"CALL_ACTIVITY\"}[$__range])) or vector(0))\n\n)",
                         "instant": true,
                         "legendFormat": "__auto",
                         "range": false
@@ -7676,7 +7676,7 @@
                       "spec": {
                         "editorMode": "code",
                         "exemplar": false,
-                        "expr": "(sum(elasticsearch_indices_store_size_bytes_primary{namespace=~\"$namespace\", index=~\"optimize.*\"}) * 2)\n/ \n(\n    sum (increase(zeebe_element_instance_events_total{namespace=~\"$namespace\",partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"PROCESS\"}[$__range]))\n-\n    sum(increase(zeebe_element_instance_events_total{namespace=~\"$namespace\", partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"CALL_ACTIVITY\"}[$__range]))\n\n)",
+                        "expr": "(sum(elasticsearch_indices_store_size_bytes_primary{namespace=~\"$namespace\", index=~\"optimize.*\"}) * 2)\n/ \n(\n    sum (increase(zeebe_element_instance_events_total{namespace=~\"$namespace\",partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"PROCESS\"}[$__range]))\n-\n    (sum(increase(zeebe_element_instance_events_total{namespace=~\"$namespace\", partition=~\"$partition\",pod=~\"$pod\", action=\"activated\", type=\"CALL_ACTIVITY\"}[$__range])) or vector(0))\n\n)",
                         "instant": true,
                         "legendFormat": "__auto",
                         "range": false
@@ -8872,8 +8872,8 @@
           "allValue": ".*",
           "allowCustomValue": true,
           "current": {
-            "text": "c8-ck-lower-disk-size-stress-200g",
-            "value": "c8-ck-lower-disk-size-stress-200g"
+            "text": "c8-ck-lower-disk-size-stress",
+            "value": "c8-ck-lower-disk-size-stress"
           },
           "definition": "label_values(atomix_role,namespace)",
           "hide": "dontHide",
