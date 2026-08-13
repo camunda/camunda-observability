@@ -739,6 +739,436 @@
           }
         }
       },
+      "panel-106": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "$DS_PROMETHEUS"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "sum(rate(zeebe_stream_processor_records_total{namespace=~\"$namespace\",partition=~\"$partition\"}[$__rate_interval])) by (partition)",
+                        "instant": false,
+                        "legendFormat": "Partition {{partition}}",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "C"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "Shows the load distribution between partitions",
+          "id": 106,
+          "links": [],
+          "title": "Primary storage: load distribution",
+          "vizConfig": {
+            "group": "piechart",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "#73BF69",
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    }
+                  },
+                  "min": 0,
+                  "unit": "short"
+                },
+                "overrides": []
+              },
+              "options": {
+                "displayLabels": [
+                  "percent",
+                  "name"
+                ],
+                "legend": {
+                  "displayMode": "list",
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "pieType": "pie",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "sort": "desc",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "13.1.3"
+          }
+        }
+      },
+      "panel-107": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "${DS_PROMETHEUS}"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "avg(rate(elasticsearch_indices_indexing_index_total{namespace=~\"$namespace\"}[$__rate_interval])) by (name)",
+                        "format": "time_series",
+                        "interval": "",
+                        "intervalFactor": 1,
+                        "legendFormat": "{{name}}",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "Shows the load distribution on the secondary storage",
+          "id": 107,
+          "links": [],
+          "title": "Output: Load distribution in secondary storage",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 25,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "percent"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  },
+                  "unit": "short"
+                },
+                "overrides": []
+              },
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "13.1.3"
+          }
+        }
+      },
+      "panel-108": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "${DS_PROMETHEUS}"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "avg(rate(elasticsearch_indices_indexing_index_total{namespace=~\"$namespace\"}[$__rate_interval])) by (name)",
+                        "format": "time_series",
+                        "interval": "",
+                        "intervalFactor": 1,
+                        "legendFormat": "{{name}}",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "Shows the load distribution on the secondary storage",
+          "id": 108,
+          "links": [],
+          "title": "Output: Load distribution in secondary storage",
+          "vizConfig": {
+            "group": "piechart",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "#73BF69",
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    }
+                  },
+                  "unit": "short"
+                },
+                "overrides": []
+              },
+              "options": {
+                "displayLabels": [
+                  "percent",
+                  "name"
+                ],
+                "legend": {
+                  "displayMode": "list",
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "pieType": "pie",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "sort": "desc",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "13.1.3"
+          }
+        }
+      },
+      "panel-109": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "$DS_PROMETHEUS"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "sum(rate(zeebe_stream_processor_records_total{namespace=~\"$namespace\",partition=~\"$partition\"}[$__rate_interval])) by (partition)",
+                        "instant": false,
+                        "legendFormat": "Partition {{partition}}",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "C"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "Shows the load distribution between partitions",
+          "id": 109,
+          "links": [],
+          "title": "Primary storage: load distribution",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 25,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "percent"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "min": 0,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  },
+                  "unit": "short"
+                },
+                "overrides": []
+              },
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "13.1.3"
+          }
+        }
+      },
       "panel-12": {
         "kind": "Panel",
         "spec": {
@@ -1168,7 +1598,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.4.3"
+            "version": "13.1.3"
           }
         }
       },
@@ -1265,7 +1695,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.4.3"
+            "version": "13.1.3"
           }
         }
       },
@@ -1614,7 +2044,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.4.3"
+            "version": "13.1.3"
           }
         }
       },
@@ -2335,7 +2765,9 @@
                   "enableFacetedFilter": false,
                   "overflow": "ellipsis",
                   "placement": "bottom",
-                  "showLegend": true
+                  "showLegend": true,
+                  "sortBy": "Max",
+                  "sortDesc": true
                 },
                 "tooltip": {
                   "hideZeros": false,
@@ -3019,7 +3451,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.4.3"
+            "version": "13.1.3"
           }
         }
       },
@@ -3119,7 +3551,34 @@
                   },
                   "unit": "percentunit"
                 },
-                "overrides": []
+                "overrides": [
+                  {
+                    "__systemRef": "hideSeriesFrom",
+                    "matcher": {
+                      "id": "byNames",
+                      "options": {
+                        "mode": "exclude",
+                        "names": [
+                          "elasticsearch-es-masters-1",
+                          "elasticsearch-es-masters-2",
+                          "elasticsearch-es-masters-0"
+                        ],
+                        "prefix": "All except:",
+                        "readOnly": true
+                      }
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.hideFrom",
+                        "value": {
+                          "legend": false,
+                          "tooltip": true,
+                          "viz": true
+                        }
+                      }
+                    ]
+                  }
+                ]
               },
               "options": {
                 "annotations": {
@@ -3232,7 +3691,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.4.3"
+            "version": "13.1.3"
           }
         }
       },
@@ -3823,7 +4282,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.4.3"
+            "version": "13.1.3"
           }
         }
       },
@@ -3920,7 +4379,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.4.3"
+            "version": "13.1.3"
           }
         }
       },
@@ -4017,7 +4476,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.4.3"
+            "version": "13.1.3"
           }
         }
       },
@@ -4115,7 +4574,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.4.3"
+            "version": "13.1.3"
           }
         }
       },
@@ -6453,7 +6912,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.4.3"
+            "version": "13.1.3"
           }
         }
       },
@@ -6559,7 +7018,7 @@
                 "wideLayout": true
               }
             },
-            "version": "12.4.3"
+            "version": "13.1.3"
           }
         }
       },
@@ -8533,12 +8992,38 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
-                          "name": "panel-12"
+                          "name": "panel-109"
                         },
                         "height": 8,
                         "width": 16,
                         "x": 0,
                         "y": 32
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-106"
+                        },
+                        "height": 8,
+                        "width": 8,
+                        "x": 16,
+                        "y": 32
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-12"
+                        },
+                        "height": 8,
+                        "width": 16,
+                        "x": 0,
+                        "y": 40
                       }
                     },
                     {
@@ -8551,7 +9036,7 @@
                         "height": 8,
                         "width": 8,
                         "x": 16,
-                        "y": 32
+                        "y": 40
                       }
                     },
                     {
@@ -8564,7 +9049,7 @@
                         "height": 5,
                         "width": 24,
                         "x": 0,
-                        "y": 40
+                        "y": 48
                       }
                     },
                     {
@@ -8577,7 +9062,7 @@
                         "height": 8,
                         "width": 24,
                         "x": 0,
-                        "y": 45
+                        "y": 53
                       }
                     },
                     {
@@ -8590,7 +9075,7 @@
                         "height": 8,
                         "width": 16,
                         "x": 0,
-                        "y": 53
+                        "y": 61
                       }
                     },
                     {
@@ -8603,7 +9088,7 @@
                         "height": 8,
                         "width": 8,
                         "x": 16,
-                        "y": 53
+                        "y": 61
                       }
                     },
                     {
@@ -8616,7 +9101,7 @@
                         "height": 7,
                         "width": 16,
                         "x": 0,
-                        "y": 61
+                        "y": 69
                       }
                     },
                     {
@@ -8629,7 +9114,33 @@
                         "height": 7,
                         "width": 8,
                         "x": 16,
-                        "y": 61
+                        "y": 69
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-107"
+                        },
+                        "height": 7,
+                        "width": 16,
+                        "x": 0,
+                        "y": 76
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-108"
+                        },
+                        "height": 7,
+                        "width": 8,
+                        "x": 16,
+                        "y": 76
                       }
                     },
                     {
@@ -8642,7 +9153,7 @@
                         "height": 6,
                         "width": 8,
                         "x": 0,
-                        "y": 68
+                        "y": 83
                       }
                     },
                     {
@@ -8655,7 +9166,7 @@
                         "height": 6,
                         "width": 8,
                         "x": 8,
-                        "y": 68
+                        "y": 83
                       }
                     },
                     {
@@ -8668,7 +9179,7 @@
                         "height": 6,
                         "width": 8,
                         "x": 16,
-                        "y": 68
+                        "y": 83
                       }
                     }
                   ]
@@ -9098,7 +9609,7 @@
           {
             "kind": "RowsLayoutRow",
             "spec": {
-              "collapse": true,
+              "collapse": false,
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
@@ -9285,10 +9796,10 @@
         "1d"
       ],
       "fiscalYearStartMonth": 0,
-      "from": "2026-08-12T19:37:24.264Z",
+      "from": "2026-08-12T20:00:00.000Z",
       "hideTimepicker": false,
       "timezone": "browser",
-      "to": "2026-08-13T03:41:11.136Z"
+      "to": "2026-08-13T02:00:00.000Z"
     },
     "title": "Camunda Performance",
     "variables": [
