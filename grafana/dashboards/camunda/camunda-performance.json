@@ -36,7 +36,7 @@
       {
         "kind": "AnnotationQuery",
         "spec": {
-          "enable": true,
+          "enable": false,
           "hide": false,
           "iconColor": "red",
           "legacyOptions": {
@@ -63,7 +63,7 @@
       {
         "kind": "AnnotationQuery",
         "spec": {
-          "enable": true,
+          "enable": false,
           "hide": false,
           "iconColor": "orange",
           "legacyOptions": {
@@ -176,6 +176,7 @@
                       "mode": "off"
                     }
                   },
+                  "min": 0,
                   "thresholds": {
                     "mode": "absolute",
                     "steps": [
@@ -3559,9 +3560,9 @@
                       "options": {
                         "mode": "exclude",
                         "names": [
-                          "camunda-1",
-                          "camunda-2",
-                          "camunda-0"
+                          "elasticsearch-es-masters-2",
+                          "elasticsearch-es-masters-1",
+                          "elasticsearch-es-masters-0"
                         ],
                         "prefix": "All except:",
                         "readOnly": true
@@ -7181,6 +7182,7 @@
                       "mode": "off"
                     }
                   },
+                  "min": 0,
                   "thresholds": {
                     "mode": "absolute",
                     "steps": [
@@ -7311,6 +7313,7 @@
                       "mode": "off"
                     }
                   },
+                  "min": 0,
                   "thresholds": {
                     "mode": "absolute",
                     "steps": [
@@ -9935,8 +9938,8 @@
           "allValue": ".*",
           "allowCustomValue": false,
           "current": {
-            "text": "c8-ck-lower-disk-size-stress",
-            "value": "c8-ck-lower-disk-size-stress"
+            "text": "c8-ck-lower-disk-size-stress2",
+            "value": "c8-ck-lower-disk-size-stress2"
           },
           "definition": "label_values(atomix_role,namespace)",
           "hide": "dontHide",
