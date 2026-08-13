@@ -2288,7 +2288,8 @@
                     "lineWidth": 1,
                     "pointSize": 5,
                     "scaleDistribution": {
-                      "type": "linear"
+                      "log": 2,
+                      "type": "log"
                     },
                     "showPoints": "auto",
                     "showValues": false,
@@ -2874,7 +2875,8 @@
                     "lineWidth": 1,
                     "pointSize": 5,
                     "scaleDistribution": {
-                      "type": "linear"
+                      "log": 2,
+                      "type": "log"
                     },
                     "showPoints": "auto",
                     "showValues": false,
@@ -4459,7 +4461,8 @@
                     "lineWidth": 1,
                     "pointSize": 5,
                     "scaleDistribution": {
-                      "type": "linear"
+                      "log": 2,
+                      "type": "log"
                     },
                     "showPoints": "auto",
                     "showValues": false,
@@ -4648,7 +4651,8 @@
                     "lineWidth": 1,
                     "pointSize": 5,
                     "scaleDistribution": {
-                      "type": "linear"
+                      "log": 2,
+                      "type": "log"
                     },
                     "showPoints": "auto",
                     "showValues": false,
@@ -9281,10 +9285,10 @@
         "1d"
       ],
       "fiscalYearStartMonth": 0,
-      "from": "2026-08-11T18:58:56.373Z",
+      "from": "2026-08-12T19:37:24.264Z",
       "hideTimepicker": false,
       "timezone": "browser",
-      "to": "2026-08-12T04:19:52.187Z"
+      "to": "2026-08-13T03:41:11.136Z"
     },
     "title": "Camunda Performance",
     "variables": [
@@ -9314,8 +9318,8 @@
           "allValue": ".*",
           "allowCustomValue": false,
           "current": {
-            "text": "c8-ck-base-max",
-            "value": "c8-ck-base-max"
+            "text": "c8-ck-lower-disk-size-stress2",
+            "value": "c8-ck-lower-disk-size-stress2"
           },
           "definition": "label_values(atomix_role,namespace)",
           "hide": "dontHide",
