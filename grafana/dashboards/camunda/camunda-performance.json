@@ -1291,6 +1291,246 @@
           }
         }
       },
+      "panel-111": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "sum(rate(zeebe_job_events_total{namespace=~\"$namespace\", action=\"activated\"}[$__rate_interval])) by (type, action) ",
+                        "legendFormat": "{{type}}: {{action}}",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 111,
+          "links": [],
+          "title": "Job backlog draining",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "13.1.3"
+          }
+        }
+      },
+      "panel-112": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "sum(rate(zeebe_job_events_total{namespace=~\"$namespace\", action=\"pushed\"}[$__rate_interval])) by (type, action) ",
+                        "legendFormat": "{{type}}: {{action}}",
+                        "range": true
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 112,
+          "links": [],
+          "title": "Working on new Jobs",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "13.1.3"
+          }
+        }
+      },
       "panel-12": {
         "kind": "Panel",
         "spec": {
@@ -9210,12 +9450,38 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
+                          "name": "panel-112"
+                        },
+                        "height": 7,
+                        "width": 13,
+                        "x": 0,
+                        "y": 26
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-111"
+                        },
+                        "height": 7,
+                        "width": 11,
+                        "x": 13,
+                        "y": 26
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
                           "name": "panel-22"
                         },
                         "height": 7,
                         "width": 24,
                         "x": 0,
-                        "y": 26
+                        "y": 33
                       }
                     },
                     {
@@ -9228,7 +9494,7 @@
                         "height": 8,
                         "width": 16,
                         "x": 0,
-                        "y": 33
+                        "y": 40
                       }
                     },
                     {
@@ -9241,7 +9507,7 @@
                         "height": 8,
                         "width": 8,
                         "x": 16,
-                        "y": 33
+                        "y": 40
                       }
                     },
                     {
@@ -9254,7 +9520,7 @@
                         "height": 7,
                         "width": 16,
                         "x": 0,
-                        "y": 41
+                        "y": 48
                       }
                     },
                     {
@@ -9267,7 +9533,7 @@
                         "height": 7,
                         "width": 8,
                         "x": 16,
-                        "y": 41
+                        "y": 48
                       }
                     },
                     {
@@ -9280,7 +9546,7 @@
                         "height": 8,
                         "width": 16,
                         "x": 0,
-                        "y": 48
+                        "y": 55
                       }
                     },
                     {
@@ -9293,7 +9559,7 @@
                         "height": 8,
                         "width": 8,
                         "x": 16,
-                        "y": 48
+                        "y": 55
                       }
                     },
                     {
@@ -9306,7 +9572,7 @@
                         "height": 8,
                         "width": 16,
                         "x": 0,
-                        "y": 56
+                        "y": 63
                       }
                     },
                     {
@@ -9319,7 +9585,7 @@
                         "height": 8,
                         "width": 8,
                         "x": 16,
-                        "y": 56
+                        "y": 63
                       }
                     },
                     {
@@ -9332,7 +9598,7 @@
                         "height": 5,
                         "width": 24,
                         "x": 0,
-                        "y": 64
+                        "y": 71
                       }
                     },
                     {
@@ -9345,7 +9611,7 @@
                         "height": 8,
                         "width": 24,
                         "x": 0,
-                        "y": 69
+                        "y": 76
                       }
                     },
                     {
@@ -9358,7 +9624,7 @@
                         "height": 8,
                         "width": 16,
                         "x": 0,
-                        "y": 77
+                        "y": 84
                       }
                     },
                     {
@@ -9371,7 +9637,7 @@
                         "height": 8,
                         "width": 8,
                         "x": 16,
-                        "y": 77
+                        "y": 84
                       }
                     },
                     {
@@ -9384,7 +9650,7 @@
                         "height": 7,
                         "width": 16,
                         "x": 0,
-                        "y": 85
+                        "y": 92
                       }
                     },
                     {
@@ -9397,7 +9663,7 @@
                         "height": 7,
                         "width": 8,
                         "x": 16,
-                        "y": 85
+                        "y": 92
                       }
                     },
                     {
@@ -9410,7 +9676,7 @@
                         "height": 7,
                         "width": 16,
                         "x": 0,
-                        "y": 92
+                        "y": 99
                       }
                     },
                     {
@@ -9423,7 +9689,7 @@
                         "height": 7,
                         "width": 8,
                         "x": 16,
-                        "y": 92
+                        "y": 99
                       }
                     },
                     {
@@ -9436,7 +9702,7 @@
                         "height": 6,
                         "width": 8,
                         "x": 0,
-                        "y": 99
+                        "y": 106
                       }
                     },
                     {
@@ -9449,7 +9715,7 @@
                         "height": 6,
                         "width": 8,
                         "x": 8,
-                        "y": 99
+                        "y": 106
                       }
                     },
                     {
@@ -9462,7 +9728,7 @@
                         "height": 6,
                         "width": 8,
                         "x": 16,
-                        "y": 99
+                        "y": 106
                       }
                     }
                   ]
