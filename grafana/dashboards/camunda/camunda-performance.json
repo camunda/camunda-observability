@@ -7897,7 +7897,7 @@
               "fieldConfig": {
                 "defaults": {
                   "color": {
-                    "fixedColor": "purple",
+                    "fixedColor": "yellow",
                     "mode": "fixed"
                   },
                   "thresholds": {
