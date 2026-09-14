@@ -1,0 +1,18 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+  json:
+    name: JSON Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Verify
+        run: ./scripts/lint.sh grafana/dashboards
