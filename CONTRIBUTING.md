@@ -31,6 +31,12 @@ To do this:
 The pull request should automatically be updated by Grafana with links back
 towards the dashboard and some screenshots showing the changes made.
 
+> [!NOTE]
+> It can take up to 1 minute to have the screenshots posted by Grafana.
+> Depending on your change and the dashboards modified, the change will may not
+> be easily visible in the screenshots; they don't remove the need to explain
+> what was changed in the pull request description.
+
 Once the pull request has been merged, the changes should be automatically reflected in Grafana.
 
 ### Editing the dashboard files directly
@@ -45,3 +51,25 @@ This follows the usual pull request process:
    dashboards directly in Grafana, including screenshots of the changes made.
 
 Once merged, Grafana should automatically reflect the changes made.
+
+## Commit Guidelines
+
+Commit messages should follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) format.
+
+For example:
+
+```
+fix: adjust error colors
+
+Use the "red" color scheme to display all the errors, instead of random colors.
+```
+
+Available commit types:
+
+- `feat` - enhancements, new features
+- `fix` - bug fixes
+- `refactor` - non-behavior changes
+- `test` - only changes in tests
+- `docs` - changes in the documentation, readme, etc.
+- `style` - apply code styles
+- `ci` - changes to the CI

@@ -16,7 +16,9 @@ You can add the dashboards from this repository into Grafana through different
 methods. The following list should give good starting points, but is not
 exhaustive:
 
-* You can use the Grafana Helm Chart's `dashboards` feature to add specific dashboards:
+* You can use the [Grafana Helm Chart](https://github.com/grafana-community/helm-charts/blob/main/charts/grafana/)'s
+  [`dashboards`](https://github.com/grafana-community/helm-charts/tree/main/charts/grafana#import-dashboards)
+  feature to add specific dashboards:
   ```yaml
   dashboards:
     camunda.json:
